@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luxury Beach Recipe Card</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+  <div class="bg-blur blur-1"></div>
+  <div class="bg-blur blur-2"></div>
+
+  <div class="theme-toggle-wrap">
+    <button id="themeToggle" class="theme-toggle">
+      <i class="fa-solid fa-moon"></i>
+      <span>Theme</span>
+    </button>
+  </div>
+
+  <div class="recipe-card">
+    <!-- HERO -->
+    <section class="recipe-hero">
+      <img src="/image/The-Beach-1024x1536.jpg" alt=" The Beach Cocktail" />
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content">
+        <div class="hero-top">
+          <span class="badge">Summer Cocktail</span>
+          <button id="saveRecipeBtn" class="save-pill">
+            <i class="fa-regular fa-bookmark"></i>
+            <span>Save Recipe</span>
+          </button>
+        </div>
+
+        <h1>The Beach</h1>
+        <p>
+          A fruity, refreshing cocktail with vodka, peach schnapps, orange juice,
+          and cranberry juice — perfect for summer evenings, brunch tables,
+          and beach-style gatherings.
+        </p>
+
+        <div class="hero-meta">
+          <span><i class="fa-regular fa-clock"></i> 5 mins</span>
+          <span><i class="fa-solid fa-fire"></i> 210 kcal</span>
+          <span><i class="fa-solid fa-glass-water"></i> Refreshing Drink</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTENT -->
+    <div class="recipe-content">
+      <!-- TOP BAR -->
+      <div class="top-bar">
+        <div class="rating-box">
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <span>5.0 Rating • 6 Reviews</span>
+        </div>
+
+        <div class="action-buttons">
+          <button class="btn btn-light" onclick="window.print()">
+            <i class="fas fa-print"></i> Print
+          </button>
+          <button class="btn btn-light">
+            <i class="fab fa-pinterest"></i> Pin
+          </button>
+          <button class="btn btn-gradient" id="copyRecipeBtn">
+            <i class="fa-regular fa-copy"></i> Copy Recipe
+          </button>
+        </div>
+      </div>
+
+      <!-- QUICK INFO -->
+      <div class="info-grid">
+        <div class="info-box">
+          <span class="label">Prep Time</span>
+          <strong>5 min</strong>
+        </div>
+        <div class="info-box">
+          <span class="label">Cook Time</span>
+          <strong>0 min</strong>
+        </div>
+        <div class="info-box">
+          <span class="label">Total Time</span>
+          <strong>5 min</strong>
+        </div>
+        <div class="info-box servings-box">
+          <span class="label">Servings</span>
+          <div class="servings-controls">
+            <button id="decreaseServings">−</button>
+            <strong id="servingsCount">1</strong>
+            <button id="increaseServings">+</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- COOK MODE / PROGRESS -->
+      <div class="cook-mode-bar">
+        <div class="cook-left">
+          <label class="switch">
+            <input type="checkbox" id="cookModeToggle" />
+            <span class="slider round"></span>
+          </label>
+          <span><strong>Cook Mode</strong> — distraction-free cooking view</span>
+        </div>
+
+        <div class="progress-wrap">
+          <span>Progress</span>
+          <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+          <strong id="progressText">0 / 6</strong>
+        </div>
+      </div>
+
+      <!-- INTRO -->
+      <div class="intro-section">
+        <p>
+          This cocktail combines the sweetness of <strong>peach schnapps</strong>,
+          the brightness of <strong>orange juice</strong>, and the tart finish of
+          <strong>cranberry juice</strong> with smooth vodka. It’s fast, colorful,
+          and ideal when you want something fun without a complicated recipe.
+        </p>
+      </div>
+
+      <!-- MAIN GRID -->
+      <div class="recipe-grid">
+        <!-- LEFT -->
+        <div class="left-column">
+          <div class="section-card">
+            <div class="section-title-row">
+              <h2>Ingredients</h2>
+              <span class="section-sub">Quantities auto-update with servings</span>
+            </div>
+
+            <ul class="ingredients-list" id="ingredientsList">
+              <li>
+                <label>
+                  <input type="checkbox" class="ingredient-check" />
+                  <span><span class="ingredient-amount" data-base="1.5">1½</span> ounces <a href="#">vodka</a></span>
+                </label>
+              </li>
+
+              <li>
+                <label>
+                  <input type="checkbox" class="ingredient-check" />
+                  <span><span class="ingredient-amount" data-base="1">1</span> ounce peach schnapps</span>
+                </label>
+              </li>
+
+              <li>
+                <label>
+                  <input type="checkbox" class="ingredient-check" />
+                  <span><span class="ingredient-amount" data-base="1.5">1½</span> ounces <a href="#">orange juice</a></span>
+                </label>
+              </li>
+
+              <li>
+                <label>
+                  <input type="checkbox" class="ingredient-check" />
+                  <span><span class="ingredient-amount" data-base="1.5">1½</span> ounces cranberry juice</span>
+                </label>
+              </li>
+
+              <li>
+                <label>
+                  <input type="checkbox" class="ingredient-check" />
+                  <span>Ice</span>
+                </label>
+              </li>
+
+              <li>
+                <label>
+                  <input type="checkbox" class="ingredient-check" />
+                  <span>Orange slices + maraschino cherries for garnish</span>
+                </label>
+              </li>
+            </ul>
+          </div>
+
+          <div class="section-card">
+            <h2>Notes</h2>
+            <ul class="notes-list">
+              <li>Fresh orange juice gives the drink a brighter and more natural flavor.</li>
+              <li>Pulp-free orange juice creates a smoother cocktail appearance.</li>
+              <li>For parties, multiply the recipe and mix it in a pitcher with plenty of ice.</li>
+              <li>You can substitute pineapple juice for orange juice for a tropical twist.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="right-column">
+          <div class="section-card">
+            <h2>Instructions</h2>
+            <ol class="instructions-list">
+              <li>Fill a cocktail shaker or mixing glass halfway with ice.</li>
+              <li>Pour in the vodka, peach schnapps, orange juice, and cranberry juice.</li>
+              <li>Stir or shake gently until the mixture is chilled.</li>
+              <li>Fill a serving glass with fresh ice and pour the cocktail over it.</li>
+              <li>Garnish with orange slices and maraschino cherries before serving.</li>
+            </ol>
+          </div>
+
+          <div class="section-card nutrition-card">
+            <h2>Nutrition</h2>
+            <div class="nutrition-grid">
+              <div><span>Calories</span><strong>210 kcal</strong></div>
+              <div><span>Carbs</span><strong>16g</strong></div>
+              <div><span>Protein</span><strong>0.5g</strong></div>
+              <div><span>Fat</span><strong>0.1g</strong></div>
+              <div><span>Sugar</span><strong>15g</strong></div>
+              <div><span>Sodium</span><strong>2mg</strong></div>
+            </div>
+          </div>
+
+          <div class="section-card share-card">
+            <h2>Share This Recipe</h2>
+            <p>
+              Tried it? Share your version on Instagram and tag your recipe post.
+            </p>
+
+            <div class="share-row">
+              <button class="share-btn insta-btn">
+                <i class="fab fa-instagram"></i> Instagram
+              </button>
+              <button class="share-btn pin-btn">
+                <i class="fab fa-pinterest"></i> Pinterest
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FOOTER -->
+      <div class="recipe-footer">
+        <div class="footer-left">
+          <div class="author-avatar">S</div>
+          <div>
+            <span class="footer-label">Recipe by</span>
+            <h3>Syed Tanweer Shahzad</h3>
+          </div>
+        </div>
+
+        <div class="footer-right">
+          <i class="fa-solid fa-heart"></i>
+          <span>Luxury recipe experience</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
